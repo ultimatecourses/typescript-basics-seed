@@ -6,6 +6,10 @@
 $ tsc --init
 $ tsc --outDir dist
 $ tsc -watch
+
+$ npm i yarn -g
+$ yarn install
+$ yarn start
 ```
 
 ## git Commands
