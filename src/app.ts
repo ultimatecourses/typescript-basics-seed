@@ -145,3 +145,158 @@
 // }
 
 //#endregion
+
+//#region Any Type
+
+// let coupon : any;
+
+// coupon = 25;
+// coupon = '25';
+// coupon = true;
+
+//#endregion
+
+//#region Implicit vs Explicit Types
+
+// let implicitCoupon = 'pizza25';
+// let explicitCoupon: string = 'pizza25';
+
+//#endregion
+
+//#region Void Type
+
+// let selectedTopping: string = "pepperoni";
+
+// function selectTopping(topping: string): void {
+//   selectedTopping = topping;
+// }
+
+// selectTopping("bacon");
+
+// console.log(selectedTopping);
+
+//#endregion
+
+//#region Never Type
+
+// function orderError(error: string) {
+//   throw new Error(error);
+
+//   //This line will never occur
+// }
+
+// orderError("Something went wrong");
+
+//#endregion
+
+//#region Null, Undefined, Strict Null Checks
+
+// let coupon: string | null | undefined = "pizza25";
+
+// function removeCoupon(): void {
+//   coupon = null;
+// }
+
+// console.log(coupon);
+// removeCoupon();
+// console.log(coupon);
+
+//#endregion
+
+//#region Union and Literal Types
+
+// let pizzaSize: string = "small";
+
+// function selectSize(size: "small" | "medium" | "large"): void {
+//   pizzaSize = size;
+// }
+
+// selectSize("large");
+
+// console.log(`Pizza size: ${pizzaSize}`);
+
+//#endregion
+
+//#region Function Types
+
+// let sumOrder: (price: number, quantity: number) => number;
+
+// sumOrder = (x, y) => x * y;
+
+// const sum = sumOrder(25, 2);
+
+// console.log(`Total sum: ${sum}`);
+
+//#endregion
+
+//#region  Functions and Optional Arguments
+
+// let sumOrder: (price: number, quantity?: number) => number;
+
+// sumOrder = (x, y) => {
+//   if (y) return x * y;
+//   else return x;
+// };
+
+// const sum = sumOrder(25);
+
+// console.log(`Total sum: ${sum}`);
+
+//#endregion
+
+//#region  Functions and Default Parameters
+
+// let sumOrder: (price: number, quantity?: number) => number;
+
+// sumOrder = (x, y = 1) => {
+//   return x * y;
+// };
+
+// const sum = sumOrder(25);
+
+// console.log(`Total sum: ${sum}`);
+
+//#endregion
+
+//#region Object Types
+
+// let pizza: {
+//   name: string;
+//   price: number;
+//   getName(): string;
+// };
+
+// pizza = {
+//   name: "Plain old pepperoni",
+//   price: 20,
+//   getName() {
+//     return this.name;
+//   }
+// };
+
+// console.log(pizza.getName());
+
+//#endregion
+
+//#region Array Types and Generics
+
+// let sizes: string[] = ["small", "medium", "large"];
+
+// console.log(sizes);
+
+// let toppings: Array<string>;
+// toppings = ["pepperoni", "tomato", "bacon"];
+
+// console.log(toppings);
+
+//#endregion
+
+//#region Tuple Types for Arrays
+
+// let pizza: [string, number, boolean];
+
+// pizza = ["Pepperoni", 20, true];
+
+// console.log(pizza);
+
+//#endregion
