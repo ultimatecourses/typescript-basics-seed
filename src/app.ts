@@ -300,3 +300,42 @@
 // console.log(pizza);
 
 //#endregion
+
+//#region Type Alias
+
+// type Size = "small" | "medium" | "large";
+// type Callback = (size: Size) => void;
+
+// let pizzaSize: Size = "small";
+
+// const selectSize: Callback = (x) => {
+//   pizzaSize = x;
+// };
+
+// selectSize(pizzaSize);
+
+//#endregion
+
+//#region Type Assertions
+
+// type Pizza = {
+//   name: string;
+//   topping: number;
+// };
+
+// const pizza: Pizza = {
+//   name: "Blazing Inferno",
+//   topping: 5
+// };
+
+// const serialized = JSON.stringify(pizza);
+
+// function getNameFromJSON(obj: string): string {
+//   return (JSON.parse(obj) as Pizza).name;
+// }
+
+// const pizzaName: string = getNameFromJSON(serialized);
+
+// console.log(pizzaName);
+
+//#endregion
