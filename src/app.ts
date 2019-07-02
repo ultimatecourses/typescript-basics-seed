@@ -1,7 +1,11 @@
-const coupon: string = 'pizza25';
+const pizzaCounter : number = 2;
 
-function normalizeCoupon(code: string): string {
-    return code.toUpperCase();
+function offerDiscount(pizzaNumber : number) : boolean {
+    return pizzaNumber > 3;
 }
 
-console.log('Final coupon is ' + normalizeCoupon(coupon));
+if(offerDiscount(pizzaCounter)) {
+    console.log('You receive a discount.');
+} else {
+    console.log('Order more than 3 pizzas to receive a discount.');
+}
