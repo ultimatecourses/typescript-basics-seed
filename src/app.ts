@@ -1,8 +1,7 @@
-function calculateSum(message, ...arg) {
-    console.log(message);
-    return arg.reduce((prev, next) => prev + next);
-}
+const europe = ["Spain", "Italy"];
 
-const sum = [1, 2, 3, 4];
+const africa = ["Morocco", "Egypt"];
 
-console.log(calculateSum("Hello", sum));
+const world = [...africa, ...europe];
+
+console.log(world);
