@@ -1,7 +1,17 @@
-const europe = ["Spain", "Italy"];
+const pizza = {
+    name: "Pizza name",
+    topping: ["Pepperoni"]
+}
 
-const africa = ["Morocco", "Egypt"];
+function getPizza({topping: pizzaTopping, name: pizzaName}) {
+    return  {pizzaName, pizzaTopping};
+}
 
-const world = [...africa, ...europe];
+const pizzaExample = getPizza(pizza);
 
-console.log(world);
+console.log(pizzaExample);
+
+const countries = ["Italy", "France", "Romania"];
+const [a, b, c] = countries;
+
+console.log(a, b, c);
