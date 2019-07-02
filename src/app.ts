@@ -1,21 +1,17 @@
-const pizza = [{
-    name : "Pepperoni",
-    toppings : ["pepperoni"]
-}]
+const pizza = {
+    name: "Pizza name",
+    price: 13,
+    getName() {
+        return this.name;
+    }
+};
 
-const mappedPizza = pizza.map((pizza) =>  pizza.name);
+console.log(pizza.getName());
 
-console.log(mappedPizza);
+const topping = ["pepperoni"];
 
-const table = {
-    name: 'Table 1',
-    getName: () => table.name
+function createOrder(pizza, topping) {
+    return {pizza, topping};
 }
 
-console.log(table.getName());
-
-function multiply(a, b) {
-    return a * b;
-}
-
-console.log(multiply(34,2));
+console.log(createOrder(pizza, topping));
