@@ -11,7 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/UltimateAngular/typescript-basics-seed.git"
   },
-  "keywords": ["typescript"],
+  "keywords": [
+    "typescript"
+  ],
   "devDependencies": {
     "awesome-typescript-loader": "3.4.1",
     "typescript": "2.6.2",
