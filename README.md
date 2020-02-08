@@ -1,16 +1,16 @@
 <h1 align="center">
-<img width="40" valign="bottom" src="https://ultimateangular.com/assets/img/categories/typescript.svg">
+<img width="40" valign="bottom" src="https://ultimatecourses.com/static/icons/typescript.svg">
 TypeScript: Basics Course Seed
 </h1>
 <h4 align="center">Project seed for our comprehensive introduction to TypeScript course.</h4>
 
 ---
 
-<a href="https://ultimateangular.com" target="_blank"><img src="https://ultimateangular.com/assets/img/banners/ua-github.svg"></a>
+<a href="https://ultimatecourses.com" target="_blank"><img src="https://ultimatecourses.com/static/banners/ultimate-typescript-leader.svg"></a>
 
 ---
 
-> This repo serves as the seed project for Ultimate Angular's TypeScript Basics course as well as the final solution in stepped branches, come and [learn TypeScript](https://ultimateangular.com/courses/) with us!
+> This repo serves as the seed project for Ultimate Angular's TypeScript Basics course as well as the final solution in stepped branches, come and [learn TypeScript](https://ultimatecourses.com/courses/typescript) with us!
 
 [Setup and install](#setup-and-install) | [Tasks](#tasks) |
 [Resources](#resources)
