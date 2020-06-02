@@ -1,5 +1,46 @@
 console.log('Hey TypeScript!');
 
+
+
+//----Arrow functions-----
+
+const colors = ['blue', 'white', 'red'];
+
+const lettersNmb = colors.map(function (color) {
+    return color.length;
+})
+const lettersNmb1 = colors.map(color => color.length);
+console.log(lettersNmb);
+console.log(lettersNmb1);
+
+
+//-------------------------
+
+
+const person = {
+    fName: 'John',
+    age: 19
+}
+
+const education: number[] = [4, 5, 5];
+
+function calcEduYears(person, education){
+    return {person, education};
+}
+console.log(calcEduYears(person, education));
+//const personEducation = {person, education};
+
+//console.log(personEducation);
+
+function sumAll(message, ...arr){
+    return arr.reduce((prev, next) => prev + next);
+}
+
+const sum = sumAll('hey', 1,2,3);
+console.log(sum);
+
+
+
 /* const test = 'Konstanta';
 
 const pizzas = [
@@ -54,14 +95,14 @@ const allToppings = [...newToppings, ...toppings];
 console.log(allToppings); */
 
 //--------------------------------------------------------------------------
-/*const pizza = {
-    name: 'Pepperoni'
+const pizza = {
+    name: 'Margherita'
 }
-const toppings = ['pepperoni'];
-const order = Object.assign({}, pizza, {toppings});
+const toppings = ['cheese'];
+//const order = Object.assign({}, pizza, {toppings});
 const spreadOrder = {...pizza, toppings};
 
-console.log(order, spreadOrder); */
+console.log(spreadOrder);
 
 //---------------------------------------------------------------------------
 /*

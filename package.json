@@ -5,16 +5,19 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:dev": "echo test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UltimateAngular/typescript-basics-seed.git"
   },
-  "keywords": ["typescript"],
+  "keywords": [
+    "typescript"
+  ],
   "devDependencies": {
     "awesome-typescript-loader": "3.4.1",
-    "typescript": "2.6.2",
+    "typescript": "^3.9.3",
     "webpack": "3.10.0",
     "webpack-dev-server": "2.9.7"
   },
@@ -23,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/UltimateAngular/typescript-basics-seed/issues"
   },
-  "homepage": "https://github.com/UltimateAngular/typescript-basics-seed#readme"
+  "homepage": "https://github.com/UltimateAngular/typescript-basics-seed#readme",
+  "dependencies": {
+    "global": "^4.4.0"
+  }
 }
