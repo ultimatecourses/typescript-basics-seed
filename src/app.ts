@@ -1,42 +1,8 @@
 console.log('Hey TypeScript!');
+import { mergeArrays } from './lesson';
 
-
-
-//----Arrow functions-----
-
-const colors = ['blue', 'white', 'red'];
-
-const lettersNmb = colors.map(function (color) {
-    return color.length;
-})
-const lettersNmb1 = colors.map(color => color.length);
-console.log(lettersNmb);
-console.log(lettersNmb1);
-
-
-let double = n => 2 * n;
-console.log("Your double number is: " + double(10));
-
-const person = {
-    fName: 'John',
-    age: 19
-}
-
-function sum2(a, b=9){
-   return  a+b;
-}
-console.log("Result: " + sum2(10));
-
-const education: number[] = [4, 5, 5];
-
-function calcEduYears(person, education){
-    return {person, education};
-}
-console.log(calcEduYears(person, education));
-//const personEducation = {person, education};
-
-//console.log(personEducation);
-
+console.log(mergeArrays());
+/*
 function sumAll(message, ...arr){
     return arr.reduce((prev, next) => prev + next);
 }
@@ -44,9 +10,6 @@ function sumAll(message, ...arr){
 const sum = sumAll('hey', 1,2,3);
 console.log(sum);
 
-
-
-/* const test = 'Konstanta';
 
 const pizzas = [
     {name: 'Pepperoni', toppings: ['pepperoni']}
@@ -100,14 +63,7 @@ const allToppings = [...newToppings, ...toppings];
 console.log(allToppings); */
 
 //--------------------------------------------------------------------------
-const pizza = {
-    name: 'Margherita'
-}
-const toppings = ['cheese'];
-//const order = Object.assign({}, pizza, {toppings});
-const spreadOrder = {...pizza, toppings};
 
-console.log(spreadOrder);
 
 //---------------------------------------------------------------------------
 /*
@@ -226,6 +182,67 @@ pizza1 = ['Margarita', 25, true];
 console.log(pizza1);
 
 */
+//-------------------------------------------LESSON 2 REPEAT -----------------------------------------
+//Arrow functions + default parameters------------------------------
+const colors = ['blue', 'white', 'red'];
+const lettersNmb = colors.map(function (color) {
+    return color.length;
+})
+const lettersNmb1 = colors.map(color => color.length);
+console.log(lettersNmb);
+console.log(lettersNmb1);
+
+let sum = (a,b = 1) => a + b;
+
+let double = n => 2 * n;
+
+let text = () => 'Your sum and double numbers are: ';
+console.log(text() + sum(5,6) + ' ' + double(5));
+
+function calcOrder(price = 1, quantity = 1){
+    return price * quantity;
+}
+console.log('Final order price is: ' + calcOrder());
+
+//Object literal improvements--------------------------------------
+const street: string = 'Green street';
+const psc: number = 10000;
+const town: string = 'NY';
+const adress = { street, psc, town };
+console.log(adress);
+
+const person = {
+    fName: 'Jim',
+    sName: 'White',
+    age: 52
+};
+const education = [3, 5, 7, 5];
+const personEducation = { person, education };
+console.log(personEducation);
+
+//Rest parameters ----------------------------------------------
+function summAll(text, ...arr){
+    return arr.reduce((prev, next) => {
+        return  prev + next;
+    })
+};
+console.log(summAll('Hey', 7, 7, 7, 7));
+
+// Destructuring----------------------------------------------------
+const pizza = {
+    pBase: 'Thin Base',
+    pName: 'Margherita',
+    pToppings: ['cheese', 'tomato']
+};
+const type = 'vegetarian';
+const newToping = ['meat'];
+
+const pizzaWithType = {...pizza, type}; // Object Spread
+console.log(pizzaWithType);
+
+const {pToppings, pBase} = pizza;
+console.log( pToppings, pBase);
+
 
 //-------------------------------------------LESSON 4 ------------------------------------------------
 //Aliases
