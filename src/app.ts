@@ -1,7 +1,7 @@
 console.log('Hey TypeScript!');
 import { mergeArrays } from './lesson';
 
-console.log(mergeArrays());
+console.log(mergeArrays([1, 3, 5, 7, 9]));
 /*
 function sumAll(message, ...arr){
     return arr.reduce((prev, next) => prev + next);
