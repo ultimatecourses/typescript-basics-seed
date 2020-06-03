@@ -1,5 +1,6 @@
 console.log('Hey TypeScript!');
 import {mergeArrays, mergeObjects, suma} from './lesson';
+import {testAnimal} from './interface-example';
 
 const sortedNumbers = mergeArrays([1, 3, 5, 7, 9])
 const [firstNumber] = sortedNumbers;
@@ -13,6 +14,8 @@ console.log(name, street);
 
 const sumAll = suma(1, 2, 1, 4, 1, 7, 3);
 console.log(sumAll);
+
+testAnimal();
 
 
 
@@ -190,7 +193,7 @@ function summAll(text, ...arr){
     return arr.reduce((prev, next) => {
         return  prev + next;
     })
-};
+}
 console.log(summAll('Hey', 7, 7, 7, 7));
 
 // Destructuring----------------------------------------------------
@@ -224,4 +227,26 @@ console.log(`My pizza size is ${myPizzaSize}`);
 
 
 
-//-------------------------------------------LESSON 5 ------------------------------------------------
+//-------------------------------------------LESSON 5-Interfaces ------------------------------------------------
+interface Pizza {
+    name: string,
+    sizes: number[],
+    getAvaliableSizes(): number[]
+}
+
+let oPizza: Pizza;
+
+/**
+function createPizza(name: string, sizes: number[]): Pizza {
+    return {
+        name,       //name: name;
+        sizes,
+        getAvailiableSizes() {
+            return this.sizes;
+        }
+    };
+}
+
+
+oPizza = createPizza('Margarita', [1, 2, 3]);
+ */
