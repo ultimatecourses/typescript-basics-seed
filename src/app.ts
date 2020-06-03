@@ -1,122 +1,60 @@
 console.log('Hey TypeScript!');
-import {mergeArrays, mergeObjects, sum} from './lesson';
+import {mergeArrays, mergeObjects, suma} from './lesson';
 
 const sortedNumbers = mergeArrays([1, 3, 5, 7, 9])
 const [firstNumber] = sortedNumbers;
 console.log('First number: ' + firstNumber);
 console.log(sortedNumbers);
-const personInfo = mergeObjects({street: 'Green', city: 'NY'});
 
+const personInfo = mergeObjects({street: 'Green', city: 'NY'});
 console.log(personInfo);
 const {name, street} = personInfo;
-console.log(street);
+console.log(name, street);
 
-const sumAll = sum(1, 2, 1, 4, 1, 7, 3);
+const sumAll = suma(1, 2, 1, 4, 1, 7, 3);
 console.log(sumAll);
 
-//console.log(sum());
-/*
-function sumAll(message, ...arr){
-    return arr.reduce((prev, next) => prev + next);
-}
-
-const sum = sumAll('hey', 1,2,3);
-console.log(sum);
 
 
-const pizzas = [
-    {name: 'Pepperoni', toppings: ['pepperoni']}
-];
-
-const mapPizzas = pizzas.map (pizza => pizza.name.toUpperCase());
-console.log(mapPizzas);
-
-const pizza = {
-    name: 'Blabla',
-    getName: function(){
-        console.log(this.name);
-    },
-};
-console.log(pizza.getName());
-
-
-const pizza = {
-    name: 'Pepperoni',
-    price: 15,
-    getName() {
-        return this.name;
-    }
-
-}
-console.log(pizza.getName());
-
-const toppings = ['pepperoni'];
-/*const order = {pizza, toppings}; console.log(order); */
-
-/*function createOrder(pizza:any, toppings:any) {
-    return { pizza, toppings };
-}
-console.log(createOrder(pizza,toppings));
-
-//----------------------------------------------------------------------------
-function sumAll(message:any, ...arr:any) {
-    console.log(message);
-   return arr.reduce((prev:any, next:any) => prev + next);
-}
-
-const sum = sumAll('Hello dear!',1,2,3,4,5,6,7,8,9,10);
-
-console.log(sum);
-
-//-----------------------------------------------------------------------
-const toppings = ['chilly', 'bacon'];
-const newToppings = ['pepperoni'];
-const allToppings = [...newToppings, ...toppings];
-
-console.log(allToppings); */
-
-//--------------------------------------------------------------------------
-
-
-//---------------------------------------------------------------------------
-/*
-const pizza = {
+//Object and Array spread------------------------------------------------------------------
+const favPizza = {
     name: 'Pepperoni',
     toppings: ['pepperoni']
 };
-function order({name: pizzaName, toppings: pizzaToppings}){
-    //console.log(pizzaName, pizzaToppings);
+function myOrder({name: pizzaName, toppings: pizzaToppings}){
+    console.log(pizzaName, pizzaToppings);
     return {pizzaName, pizzaToppings};
 }
+const { pizzaName } = myOrder(favPizza);                //object spread
+console.log(pizzaName);
 
-const { pizzaName } = order(pizza);
+
 const toppings = ['bacon', 'chilly', 'pepperoni'];
-const [a, b, c] = toppings;
+const [a, b] = toppings;                                //array spread
 
-function logToppings([a, b, c]:any){
-    console.log(a,b,c);
+function logToppings([a, b]:any){
+    console.log(a,b);
 }
 
 logToppings(toppings);
 
 
-*/
 //-------------------------------------------LESSON 3 ------------------------------------------------
-/*
+
 //-------------NUMBER
 const pizzaCost: number = 10;
-const toppings: number = 155;
+const myToppings: number = 155;
 
 function calculatePizzaPrice(cost: number, toppings: number):number {
     return cost + 1.5 * toppings;
 }
 
-const cost: number = calculatePizzaPrice(pizzaCost, toppings);
+const cost: number = calculatePizzaPrice(pizzaCost, myToppings);
 console.log('Pizza price is:' + cost);
-*/
+
 
 //---------- STRING
-/*
+
 const coupon: string = 'pizza25';
 function normalizeCoupon(code: string){
     return code.toUpperCase();
@@ -124,14 +62,14 @@ function normalizeCoupon(code: string){
 const couponMessage: string = 'Your final coupon is: ' + normalizeCoupon(coupon);
 
 console.log(couponMessage);
-*/
-/*
+
+
 //---------- BOOLEAN
-const pizza: number = 2;
+const pizza2: number = 2;
 function offerDiscount(order: number):boolean {
     return order > 3;
 }
-if (offerDiscount(pizza)){
+if (offerDiscount(pizza2)){
     console.log('You are entitled to a discount!');
 }
 else{
@@ -149,50 +87,64 @@ selectTopping('cheese');
 
 console.log(selectedTopping);
 
-//--------UNION
 
-let pizzaSize: string = 'small';
-console.log('Pizza size:' + pizzaSize);
+//--------NULL, UNDEFINED
+let coupon1: string | undefined = 'ccc2020';
+console.log(coupon);
 
-function selectSize(size: 'small' | 'medium' | 'large') {
-    pizzaSize = size;
+function useCoupon(){
+    coupon1 = undefined;
 }
-selectSize('medium');
-console.log('Pizza size:' + pizzaSize);
+
+useCoupon();
+console.log(coupon);
+
+
+
+//--------UNION
+let caffeineLevel: string | number = 'low';
+function selectLevel(level: 'low' | 'high' | 0): void{
+    caffeineLevel= level;
+}
+selectLevel(0);
+console.log(`Coffeine level: ${caffeineLevel}`);
+
 
 //-------FUNCTION
-let sumOrder: Function;
-sumOrder = (price: number, quantity: number): number => {
-    return price * quantity;
-}
-const sum = sumOrder(15, 8);
+let sumOrder1: (price: number, quantity?: number) => number;
+    sumOrder1 = (x, y = 1) => x * y;
 
-console.log('Your order costs: ' + sum);
-*/
-/*
-//------------Functions and optional argument
-let sumOrder: (price: number, quantity?: number) => number;
-    sumOrder = (x, y= 1) => x * y;
+const order = sumOrder1(25);
 
-const sum = sumOrder(25);
-
-console.log('Your order costs: ' + sum);
+console.log('Your Order: ' + order + ' Kc');
 
 //------OBJECT TYPE
-let pizza: {name: string, price: number, getName(): string} = {
-    name: 'Plain Old Pepperoni',
+let thePizza: {pName: string, price: number, getName(): string} = {
+    pName: 'Plain Old Pepperoni',
     price: 15,
     getName(): string {
-        return pizza.name;
+        return thePizza.pName;
     }
 }
-
-console.log('The pizza is called: ' + pizza.getName());
+console.log('The pizza is called: ' + thePizza.getName());
 
 let pizza1: [string, number, boolean];
 pizza1 = ['Margarita', 25, true];
 
 console.log(pizza1);
+
+// -------ARRAY TYPE
+const size: string[] = ['small', 'medium', 'large'];
+let tmp: number[];
+ tmp = [1, 2, 3];
+
+//Generics --------
+let size2: Array<string>; // for classes
+
+//--------TUPLE TYPES FOR ARRAY - we have different types in an array
+
+let newPizza: [string, number, boolean];
+newPizza = ['Margarita', 20, true];    //order is important
 
 
 //-------------------------------------------LESSON 2 REPEAT -----------------------------------------
@@ -218,10 +170,10 @@ function calcOrder(price = 1, quantity = 1){
 console.log('Final order price is: ' + calcOrder());
 
 //Object literal improvements--------------------------------------
-const street: string = 'Green street';
+const newStreet: string = 'Green street';
 const psc: number = 10000;
 const town: string = 'NY';
-const adress = { street, psc, town };
+const adress = { newStreet, psc, town };
 console.log(adress);
 
 const person = {
@@ -258,16 +210,18 @@ console.log( pToppings, pBase);
 
 
 //-------------------------------------------LESSON 4 ------------------------------------------------
-//Aliases
+//Aliases  - custom type
 type Size = 'small' | 'medium' | 'large';
-type CallBack = (size: Size) => void;
+type Callback = (size: Size) => void;
 
-let pizzaSize: Size = 'small';
+let myPizzaSize: Size = 'small';
 
-const selectSize: CallBack = (x) => {
-    pizzaSize = x;
-};
+const selectNewSize: Callback = (x) =>{
+    myPizzaSize = x;
+}
+selectNewSize('medium');
+console.log(`My pizza size is ${myPizzaSize}`);
 
-selectSize('small'); */
+
 
 //-------------------------------------------LESSON 5 ------------------------------------------------

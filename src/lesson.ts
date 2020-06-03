@@ -8,7 +8,7 @@ export function mergeObjects(address: {street: string, city: string}, person = {
     return { ...address, ...person };
 }
 
-export function sum(...numbers) {
+export function suma(...numbers) {
     return numbers.reduce((prev, next) => {
         if (prev < next) {
             return prev;
