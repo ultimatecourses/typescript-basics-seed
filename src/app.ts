@@ -14,13 +14,18 @@ console.log(lettersNmb);
 console.log(lettersNmb1);
 
 
-//-------------------------
-
+let double = n => 2 * n;
+console.log("Your double number is: " + double(10));
 
 const person = {
     fName: 'John',
     age: 19
 }
+
+function sum2(a, b=9){
+   return  a+b;
+}
+console.log("Result: " + sum2(10));
 
 const education: number[] = [4, 5, 5];
 
