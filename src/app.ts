@@ -1,7 +1,8 @@
 console.log('Hey TypeScript!');
-import { mergeArrays } from './lesson';
+import {mergeArrays, mergeObjects} from './lesson';
 
 console.log(mergeArrays([1, 3, 5, 7, 9]));
+console.log(mergeObjects({street: 'Green', city: 'NY'}));
 /*
 function sumAll(message, ...arr){
     return arr.reduce((prev, next) => prev + next);
@@ -181,7 +182,7 @@ pizza1 = ['Margarita', 25, true];
 
 console.log(pizza1);
 
-*/
+
 //-------------------------------------------LESSON 2 REPEAT -----------------------------------------
 //Arrow functions + default parameters------------------------------
 const colors = ['blue', 'white', 'red'];
@@ -255,6 +256,6 @@ const selectSize: CallBack = (x) => {
     pizzaSize = x;
 };
 
-selectSize('small');
+selectSize('small'); */
 
 //-------------------------------------------LESSON 5 ------------------------------------------------
