@@ -1,8 +1,20 @@
 console.log('Hey TypeScript!');
-import {mergeArrays, mergeObjects} from './lesson';
+import {mergeArrays, mergeObjects, sum} from './lesson';
 
-console.log(mergeArrays([1, 3, 5, 7, 9]));
-console.log(mergeObjects({street: 'Green', city: 'NY'}));
+const sortedNumbers = mergeArrays([1, 3, 5, 7, 9])
+const [firstNumber] = sortedNumbers;
+console.log('First number: ' + firstNumber);
+console.log(sortedNumbers);
+const personInfo = mergeObjects({street: 'Green', city: 'NY'});
+
+console.log(personInfo);
+const {name, street} = personInfo;
+console.log(street);
+
+const sumAll = sum(1, 2, 1, 4, 1, 7, 3);
+console.log(sumAll);
+
+//console.log(sum());
 /*
 function sumAll(message, ...arr){
     return arr.reduce((prev, next) => prev + next);
